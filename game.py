@@ -443,7 +443,7 @@ while playing == True:
         print("O won!!!!!!!")
         playing = False
 
-## VETICAL CHECKS FOR WIN   
+## VERTICAL CHECKS FOR WIN   
     if ((("a1" in xplay) and ("a2" in xplay) and ("a3" in xplay)) or (("b1" in xplay) and ("b2" in xplay) and ("b3" in xplay)) or (("c1" in xplay) and ("c2" in xplay) and ("c3" in xplay))):
         print("X won!!!!!!!")
         playing = False

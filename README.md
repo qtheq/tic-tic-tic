@@ -7,3 +7,6 @@ then enter a letter, followed by a number
 
 and then youre playing tic tic tic!!!! congratulations!!!!!!!!!
 (this took too long)
+
+![image](https://user-images.githubusercontent.com/42096838/219123310-49b87acc-4883-49b5-a1c4-c5987611d9c3.png)
+

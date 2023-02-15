@@ -5,6 +5,7 @@
 print("\ntic tac toe!! if you don't know the rules, simply leave <3 \n")
 
 ## main display
+## sets up strings for display and later manipulation (yes i know some are repeats, it's easier to have it set up by line (i can't think))
 line1   = "----------------------------------"
 line2   = "#L |  |  A  |  |  B  |  |  C  |  |"
 line3   = "   |  |-----|--|-----|--|-----|  |"
@@ -20,7 +21,6 @@ line12  = "   |  |-----|--|-----|--|-----|  |"
 line13  = "----------------------------------"
 
 blank = " "
-hold  = {}
 Xdisp = "X"
 Odisp = "O"
 
@@ -32,20 +32,23 @@ print(line1, line2, line3, line4,
       nl3.format(blank, blank, blank), 
       line12, line13, sep = "\n")
 
+## these are made as separate versions of the variables specifcally for printing
+## this way the board stays even and {} doesn't display
 nl1p = str(nl1.format(blank, blank, blank))
 nl2p = str(nl2.format(blank, blank, blank))
 nl3p = str(nl3.format(blank, blank, blank))
 
-
 print("first, pick if you want to be X's or O's. whoever is the second player will be the opposite (they don't get free will)")
 print("then enter the letter of where you want to put your piece, and enter the number in the next line")
 
-## actual code from here on lol
 prevplay = []
 prevrow = []
 xplay = []
 oplay = []
 
+## checks if the input for the marker is correct (and insults you otherwise)
+## also sets the values to be consistent in case the case differs
+## cxo exists for the first check for switching players to make sure the switch doesn't occur on the first turn
 correct = False
 while correct == False:
     cxo = input("X's or O's?:")
@@ -63,6 +66,8 @@ while correct == False:
         correct = False
 
 turn = 1
+
+## GAME STARTS
 playing = True
 while playing == True:
     
@@ -74,7 +79,7 @@ while playing == True:
         xo = "x"
         cxo = "x"
 
-## checks!!!!
+## checks to make sure the input is valid and is a new play
     new = False
     while new == False:
         correct = False
@@ -95,13 +100,15 @@ while playing == True:
 
         correct = False
         while correct == False:
-            num = int(input("Number:"))
-
-            if (num == 1) or (num == 2) or (num == 3):
-                correct = True
-            else:
+            try:
+                num = int(input("Number:"))
+            
+                if (num == 1) or (num == 2) or (num == 3):
+                    correct = True
+                else:
+                    print("put in '1,' '2,' or '3,' loser")
+            except ValueError:
                 print("put in '1,' '2,' or '3,' loser")
-                correct = False
         
         play = let + str(num)
         
@@ -115,6 +122,7 @@ while playing == True:
     print(line1, line2, line3, line4, sep = "\n", end = "\n")
 
 ## PREVIOUS PLAY CHECKS
+## these are checked by row to ensure the board doesn't visually break at any point
     if (num in prevrow):
         if (num == 1):
             
@@ -417,7 +425,8 @@ while playing == True:
                 print(nl3p)
 
     print(line12, line13, sep = "\n", end = "\n")
-    
+
+## adds plays to lists in order to perform win checks and previous play checks 
     if (cxo == "x"):
         xplay.append(play)
     else:
@@ -458,9 +467,7 @@ while playing == True:
         playing = False
 
 ## CHECK FOR FULL BOARD
-
-### HCNAGE TOMROOROW check instead hte number of values in prevplay
     if (len(prevplay) == 9):
         print("you BOTH lost!!! HOW'D YOU DO THAT??????")
 
-    turn += 1              
+    turn += 1

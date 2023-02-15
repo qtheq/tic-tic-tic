@@ -154,7 +154,7 @@ while playing == True:
                     nl1p = str(nl1.format(Xdisp, blank))
                     nl1 = str(nl1.format(Xdisp, {}))
                     print(nl1p, line6, line7, nl2p, line9, line10, nl3p, sep = "\n", end = "\n")
-                elif (xo == "o") and ("a1" in prevplay):
+                elif (xo == "o") and ("a1" in prevplay) and ("c1" not in prevplay):
                     nl1p = str(nl1.format(Odisp, blank))
                     nl1 = str(nl1.format(Odisp, {}))
                     print(nl1p, line6, line7, nl2p, line9, line10, nl3p, sep = "\n", end = "\n")
@@ -163,7 +163,7 @@ while playing == True:
                     nl1p = str(nl1.format(blank, Xdisp))
                     nl1 = str(nl1.format({}, Xdisp))
                     print(nl1p, line6, line7, nl2p, line9, line10, nl3p, sep = "\n", end = "\n")
-                elif (xo == "o") and ("c1" in prevplay):
+                elif (xo == "o") and ("c1" in prevplay) and ("a1" not in prevplay):
                     nl1p = str(nl1.format(blank, Odisp))
                     nl1 = str(nl1.format({}, Odisp))
                     print(nl1p, line6, line7, nl2p, line9, line10, nl3p, sep = "\n", end = "\n")
@@ -220,7 +220,7 @@ while playing == True:
                     nl2p = str(nl2.format(Xdisp, blank))
                     nl2 = str(nl2.format(Xdisp, {}))
                     print(nl1p, line6, line7, nl2p, line9, line10, nl3p, sep = "\n", end = "\n")
-                elif (xo == "o") and ("a2" in prevplay):
+                elif (xo == "o") and ("a2" in prevplay) and ("c2" not in prevplay):
                     nl2p = str(nl2.format(Odisp, blank))
                     nl2 = str(nl2.format(Odisp, {}))
                     print(nl1p, line6, line7, nl2p, line9, line10, nl3p, sep = "\n", end = "\n")
@@ -229,7 +229,7 @@ while playing == True:
                     nl2p = str(nl2.format(blank, Xdisp))
                     nl2 = str(nl2.format({}, Xdisp))
                     print(nl1p, line6, line7, nl2p, line9, line10, nl3p, sep = "\n", end = "\n")
-                elif (xo == "o") and ("c2" in prevplay):
+                elif (xo == "o") and ("c2" in prevplay) and ("a2" not in prevplay):
                     nl2p = str(nl2.format(blank, Odisp))
                     nl2 = str(nl2.format({}, Odisp))
                     print(nl1p, line6, line7, nl2p, line9, line10, nl3p, sep = "\n", end = "\n")
